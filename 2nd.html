@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu&modal</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .upper-header {
+        background-color: purple;
+        width: 100%;
+        height: 30px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .header {
+        background-color: indigo;
+
+        display: flex;
+        justify-content: space-around;
+
+        padding: 0 80px;
+      }
+      .logo {
+        background-color: white;
+        display: flex;
+        align-items: center;
+
+        margin: 5px;
+      }
+      @media (max-width: 474px) {
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+      }
+      @media (max-width: 474px) {
+        .title {
+          font-size: 15px;
+        }
+      }
+      .left-menu {
+        color: white;
+        background-color: purple;
+        width: 150px;
+        height: 100%;
+
+        position: absolute;
+        left: -160px;
+
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: 442px) {
+        .left-menu {
+          width: 100px;
+        }
+      }
+      
+    input:checked ~.left-menu {
+        animation: open 1s;
+        left: 0;
+        top: 25px;
+      }
+      @keyframes open {
+        from {
+          left: -100px;
+          top: 0;
+          opacity: 0;
+        }
+
+        to {
+          left: 0;
+          opacity: 1;
+        }
+      } 
+      .content {
+        background-image: url(https://i.redd.it/538v5rjfp0951.jpg);
+        background-size: cover;
+
+        padding: 25% 25%;
+
+        display: flex;
+        flex-direction: column;
+      }
+      .adress {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: purple;
+        height: 30px;
+
+        display: flex;
+        justify-content: center;
+      }
+      @media (max-width: 730px) {
+        .adress {
+          font-size: 10px;
+        }
+      }
+     .autorizhation {
+        background-color: indigo;
+        height: 30px;
+
+        display: flex;
+        justify-content: center;
+      }
+      #cover {
+        background: rgba(63, 63, 63, 0.5);
+        width: 100%;
+        height: 1000px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #modal {
+        width: 300px;
+        height: 110px;
+        text-align: center;
+        border: 3px solid indigo;
+        border-radius: 10px;
+        color: white;
+        background: indigo;
+
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      #cover:target {
+        display: block;
+      }
+      .close {
+        display: inline-block;
+        border: 1px solid purple;
+        color: white;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: purple;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .close:hover {
+        background: white;
+      }
+      .account {
+        color: white;
+        border: 1px solid purple;
+      }
+      .footer {
+        background-color: indigo;
+        color: white;
+        width: 100%;
+        height: 100px;
+      }
+      @media (max-width: 743px) {
+        .footer {
+          height: 1000px;
+        }
+      }
+      .info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="upper-header">
+      <div class="sidebar_menu">
+        <input type="checkbox" class="box"/>
+
+        <div class="left-menu">
+          <button>menu1`</button>
+          <button>menu2`</button>
+          <button>menu3`</button>
+        </div>
+    </div>
+    <div class="upper-menu">
+        <select class="lang">
+          <option>Ukrainian</option>
+          <option>Russian</option>
+          <option>English</option>
+        </select>
+        <select class="currency">
+          <option>UAH</option>
+          <option>USD</option>
+        </select>
+    </div>
+    </div>
+    <div class="header">
+      <div class="logo">
+        <img
+          src="https://cdn.iconscout.com/icon/free/png-256/play-game-675401.png"
+          alt="logotype"
+          height="150px"
+        />
+      </div>
+      <div class="title">
+        <p>"shopname"</p>
+        <p>some inspiration</p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="adress">
+        <p>Create your account to start selling skins:</p>
+      </div>
+      <div class="autorizhation">
+        <div id="cover">
+          <div id="modal">
+            <p>Username</p>
+            <input type="text">
+            <p>Password</p>
+            <input type="text">
+            <button>
+            <a href="#" class="close"> close </a>
+            </button>
+          </div>
+        </div>
+        <a class="account" href="#cover">create account</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="info">
+        <p>@titled</p>
+        <button>go up</button>
+      </div>
+    </div>
+  </body>
+</html>

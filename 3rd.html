@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>form&input</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .upper-header {
+        background-color: greenyellow;
+        width: 100%;
+        height: 20px;
+      }
+      .sidebar__menu {
+        color: white;
+        background-color: greenyellow;
+        width: 150px;
+        height: 100%;
+
+        position: absolute;
+        left: -160px;
+
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar:checked ~ .sidebar__menu {
+        animation: open 1s;
+        left: 0;
+        top: 25px;
+      }
+      @keyframes open {
+        from {
+          left: -100px;
+          top: 0;
+          opacity: 0;
+        }
+
+        to {
+          left: 0;
+          opacity: 1;
+        }
+      }
+      .lower-header {
+        background-color: green;
+        width: 100%;
+        height: 100px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .inputtype {
+        border: 2px solid gray;
+      }
+      .inputtype:focus {
+        border: 2px solid blue;
+      }
+      .label {
+        position: relative;
+        left: 155px;
+        bottom: 30px;
+        pointer-events: none;
+        line-height: 40px;
+        transition: .3s;
+      }
+      .inputtype:not(:focus):valid ~.label {
+        top: -10px;
+        font-size: 10px;
+      }
+      .name {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+      }
+      .content {
+        background-image: url(https://static.vecteezy.com/system/resources/previews/000/432/852/non_2x/wild-animals-in-the-zoo-vector.jpg);
+        background-size: cover;
+
+        padding: 25% 25%;
+
+        display: flex;
+        flex-direction: center;
+      }
+      .footer {
+        background-color: green;
+        width: 100%;
+        height: 100px;
+      }
+      .Form__body {
+        background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      ul {
+        width:750px;
+        list-style-type:none;
+        list-style-position:outside;
+        margin:0px;
+        padding:0px;
+      }
+      li {
+        padding:12px;
+        border-bottom:1px solid #eee;
+        position:relative;
+      }
+      
+.contact_form h2 {
+ margin:0;
+ display: inline;
+}
+.required_notification {
+ color:#d45252;
+ margin:5px 0 0 0;
+ display:inline;
+ float:right;
+}
+.Form__body h2 {
+    margin:0;
+    display: inline;
+}
+.required_notification {
+    color:#d45252;
+    margin:5px 0 0 0;
+    display:inline;
+    float: right;
+}
+label {
+  width:150px;
+  margin-top: 3px;
+  display:inline-block;
+  float:left;
+  padding:3px;
+}
+input {
+  height:20px;
+  width:220px;
+  padding:5px 8px;
+}
+#cv {
+  padding:8px;
+  width:300px;
+}
+.button {
+  margin-left:156px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="upper-header">
+      <input type="checkbox" class="sidebar">
+      <div class="sidebar__menu">
+        <Button>menu1</Button>
+        <Button>menu2</Button>
+        <Button>menu3</Button>
+      </div>
+    </div>
+    <div class="lower-header">
+      <div class="lh__logo">
+        <img src="https://www.brandcrowd.com/gallery/brands/pictures/picture15574683467192.jpg" alt="logo" width="125px">
+      </div>
+      <div class="lh__name">
+        <p> "Site-name" </p>
+      </div>
+      <div class="lh__main-input">
+        <input type="text" class="inputtype">
+        <label class="label">search</label>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content__form">
+        <form class="Form__body" action="/test" method="get">
+          <ul>
+            <li>
+              <h2>Contact info</h2>
+              <span class="required_notification">* Denotes Required Field</span>
+            </li>
+            <li>
+              <label for="name">Name: *</label>
+              <input type="text" name="name" required />
+            </li>
+            <li>
+              <label for="phone">Phone:</label>
+              <input type="number" name="phone" />
+            </li>
+            <li>
+              <label for="mail">Email: *</label>
+              <input type="email" name="mail" required />
+            </li>
+              
+              <li>
+                <label for="Age">Age: *</label>
+                <input type="number" name="Age" required />
+              </li>
+              <li>
+                <label for="Gender">Gender:</label>
+                <Select>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Dont want to answer</option>
+                </Select>
+              </li>
+              <li>
+                <label for="cover">Short cover letter: *</label>
+                <input id="cv" type="text" name="cover" required />
+              </li>
+              <li>
+                  <label for="animal">Choose your pet: *</label> 
+                  <p><input type="radio" name="answer" value="a1">cat<Br>
+                    <input type="radio" name="answer" value="a2">dog<Br>
+                    <input type="radio" name="answer" value="a3">snake</p>
+              </li>
+              <li>
+                <p class="button"><input type="submit"></p>
+              </li>
+            </ul>
+          </form>
+      </div>
+    </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>
