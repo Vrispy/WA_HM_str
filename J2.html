@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H6</title>
+  </head>
+  <body>
+    <script>
+      // task 1
+      let x = 2;
+      function summ(x) {
+        return function (n) {
+          return x + n;
+        };
+      }
+
+      alert(summ(2)(3));
+
+      // task 2
+      let c = 0;
+      function makecounter(counter) {
+        let c2 = 0;
+        return function () {
+          console.log(c, c2);
+          c++;
+          c2++;
+        };
+      }
+
+      const counter = makecounter();
+      const counter2 = makecounter();
+
+      alert(counter());
+      alert(counter());
+      alert(counter2());
+      alert(counter2());
+      alert(counter());
+
+      // task 3
+      let arr = [];
+      function Arr_f() {
+        let input = prompt("put number", "");
+
+        if (prompt.length < 0) break;
+        {
+          arr.push();
+        }
+      }
+    </script>
+  </body>
+</html>
