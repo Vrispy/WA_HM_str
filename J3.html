@@ -60,6 +60,24 @@
       messages = messages.map(function (item) {
         return `<li class="${item.isMymessage ? "Mymessage" : "notMymessage"}">
         ${item}</li>`;
+
+        function row(item) {
+          if (isMymessage === true) {
+            return (messages.innerHTML += `
+            width: 70px;
+            height: 20px;
+            position: relative;
+            left: 150px;
+            `);
+          } else {
+            return (messages.innerHTML += `
+            width: 70px;
+            height: 20px;
+            position: relative;
+            left: -50px;
+            `);
+          }
+        }
       });
 
       chat.innerHTML += `
